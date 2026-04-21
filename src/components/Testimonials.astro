@@ -1,0 +1,43 @@
+---
+const testimonials = [
+    {
+        text: "Une expérience culinaire exceptionnelle. Chaque plat est une œuvre d'art, et le service est impeccable.",
+        author: "Marie L.",
+        role: "Cliente régulière"
+    },
+    {
+        text: "L'Auberge est devenu notre restaurant préféré pour les occasions spéciales. La qualité est constante.",
+        author: "Pierre & Sophie D.",
+        role: "Clients depuis 2019"
+    },
+    {
+        text: "La cave est impressionnante et le sommelier a su nous guider parfaitement dans nos choix.",
+        author: "Jean-Marc R.",
+        role: "Amateur de vin"
+    }
+];
+---
+
+<section class="py-24 bg-stone-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-amber-400 text-sm font-semibold tracking-widest uppercase">Témoignages</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mt-4">
+                Ce que nos Clients Disent
+            </h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            {testimonials.map(t => (
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <div class="text-amber-400 text-4xl font-serif mb-4">"</div>
+                    <p class="text-stone-300 leading-relaxed mb-6">{t.text}</p>
+                    <div>
+                        <div class="font-medium text-white">{t.author}</div>
+                        <div class="text-sm text-stone-400">{t.role}</div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

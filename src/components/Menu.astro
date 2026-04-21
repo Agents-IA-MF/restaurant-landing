@@ -1,0 +1,72 @@
+---
+const categories = [
+    {
+        name: "Entrées",
+        items: [
+            { name: "Foie Gras Mi-cuit", description: "Chutney de figues, pain brioché toasté", price: "28€" },
+            { name: "Saint-Jacques Poêlées", description: "Crème de céleri, émulsion de truffe", price: "32€" },
+            { name: "Velouté de Champignons", description: "Champignons sauvages, huile de noisette", price: "18€" },
+        ]
+    },
+    {
+        name: "Plats",
+        items: [
+            { name: "Filet de Bœuf Rossini", description: "Foie gras chaud, sauce périgourdine", price: "45€" },
+            { name: "Bar en Papillote", description: "Légumes de saison, beurre blanc citronné", price: "38€" },
+            { name: "Risotto aux Truffes", description: "Parmesan 24 mois, copeaux de truffe noire", price: "42€" },
+        ]
+    },
+    {
+        name: "Desserts",
+        items: [
+            { name: "Soufflé au Grand Marnier", description: "Crème anglaise à la vanille de Madagascar", price: "16€" },
+            { name: "Tarte Tatin Revisitée", description: "Glace au caramel beurre salé", price: "14€" },
+            { name: "Assiette de Fromages", description: "Sélection affineur, pain de campagne", price: "18€" },
+        ]
+    }
+];
+---
+
+<section id="menu" class="py-24 bg-stone-50">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-amber-600 text-sm font-semibold tracking-widest uppercase">Notre Carte</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-stone-900 mt-4">
+                Menu Gastronomique
+            </h2>
+            <p class="text-stone-500 mt-4 max-w-2xl mx-auto">
+                Une cuisine raffinée qui célèbre les saveurs authentiques et les produits de saison.
+            </p>
+        </div>
+        
+        <div class="space-y-16">
+            {categories.map(category => (
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-900 mb-8 text-center">
+                        {category.name}
+                    </h3>
+                    <div class="space-y-6">
+                        {category.items.map(item => (
+                            <div class="flex items-baseline justify-between group">
+                                <div class="flex-1">
+                                    <div class="flex items-baseline">
+                                        <span class="font-medium text-stone-900 text-lg">{item.name}</span>
+                                        <span class="flex-1 mx-4 border-b border-dotted border-stone-300 group-hover:border-amber-400 transition-colors"></span>
+                                        <span class="font-serif text-xl font-semibold text-amber-600">{item.price}</span>
+                                    </div>
+                                    <p class="text-stone-500 text-sm mt-1">{item.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+        
+        <div class="text-center mt-16">
+            <a href="#" class="inline-flex items-center px-8 py-4 border-2 border-stone-900 text-stone-900 font-semibold rounded-full hover:bg-stone-900 hover:text-white transition-colors">
+                Voir la Carte Complète
+            </a>
+        </div>
+    </div>
+</section>
